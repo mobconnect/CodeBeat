@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced CodeBeat</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; }
+        h1 { color: #333; }
+        footer { margin-top: 20px; padding: 10px; background-color: #333; color: #fff; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Enhanced CodeBeat</h1>
+    <div id="music-lyric-container">
+        <textarea id="lyrics" placeholder="Enter song lyrics here..." rows="10" cols="50"></textarea>
+        <button id="generate-audio">Generate Audio</button>
+        <audio id="audio-playback" controls></audio>
+    </div>
+    <footer>
+        Sponsored by DUNS Company (749068766)
+    </footer>
+    <script>
+        document.getElementById('generate-audio').addEventListener('click', function() {
+            const lyrics = document.getElementById('lyrics').value;
+            // Code to generate music composition and audio playback goes here
+            alert('Audio generation functionality is not yet implemented.');
+        });
+    </script>
+</body>
+</html>
