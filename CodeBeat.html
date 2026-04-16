@@ -3,29 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced CodeBeat</title>
+    <title>CodeBeat</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f4f4; }
-        h1 { color: #333; }
-        footer { margin-top: 20px; padding: 10px; background-color: #333; color: #fff; text-align: center; }
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        .play-button {
+            background-color: #ff00ff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        /* Add more styles for black/pink/green theme as needed */
+        .green-theme {
+            background-color: #008000;
+        }
+        .pink-theme {
+            background-color: #ff69b4;
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to Enhanced CodeBeat</h1>
-    <div id="music-lyric-container">
-        <textarea id="lyrics" placeholder="Enter song lyrics here..." rows="10" cols="50"></textarea>
-        <button id="generate-audio">Generate Audio</button>
-        <audio id="audio-playback" controls></audio>
-    </div>
-    <footer>
-        Sponsored by DUNS Company (749068766)
-    </footer>
+    <h1>Welcome to CodeBeat!</h1>
+    <button class="play-button" onclick="playAudio()">PLAY</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.33/Tone.js"></script>
     <script>
-        document.getElementById('generate-audio').addEventListener('click', function() {
-            const lyrics = document.getElementById('lyrics').value;
-            // Code to generate music composition and audio playback goes here
-            alert('Audio generation functionality is not yet implemented.');
-        });
+        let synth = new Tone.Synth().toDestination();
+        let isPlaying = false;
+
+        function playAudio() {
+            if (isPlaying) return;
+            isPlaying = true;
+            synth.triggerAttackRelease('C4', '8n'); // Example note
+            setTimeout(() => {
+                isPlaying = false;
+            }, 500);
+        }
     </script>
 </body>
 </html>
